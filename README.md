@@ -1,0 +1,1 @@
+# babel-plugin-inline-i18n-messages
