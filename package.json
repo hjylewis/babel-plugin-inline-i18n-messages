@@ -1,0 +1,34 @@
+{
+  "name": "babel-plugin-inline-i18n-messages",
+  "version": "0.0.1",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hjylewis/babel-plugin-inline-i18n-messages.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hjylewis/babel-plugin-inline-i18n-messages/issues"
+  },
+  "homepage": "https://github.com/hjylewis/babel-plugin-inline-i18n-messages#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.1.2",
+    "prettier": "^2.0.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
+  }
+}
