@@ -1,0 +1,4 @@
+{
+  "getMessageFile": "./getMessage.js",
+  "extractKeysFile": "./extractKeys.js"
+}

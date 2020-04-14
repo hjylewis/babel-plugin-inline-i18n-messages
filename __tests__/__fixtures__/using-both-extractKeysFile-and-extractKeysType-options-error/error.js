@@ -1,0 +1,1 @@
+module.exports = `Option "extractKeysFile" and "extractKeysType" cannot be used at the same time.`;

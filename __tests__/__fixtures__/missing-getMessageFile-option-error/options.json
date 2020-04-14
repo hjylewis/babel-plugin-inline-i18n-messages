@@ -1,0 +1,4 @@
+{
+  "extractKeysFile": "./extractKeys.js",
+  "addMessagesSource": "i18n/addMessages.js"
+}

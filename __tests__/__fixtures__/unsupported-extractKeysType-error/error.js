@@ -1,0 +1,1 @@
+module.exports = `Unsupported option for extractKeysType "unsupported-type"`;

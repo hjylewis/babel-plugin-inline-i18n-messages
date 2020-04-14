@@ -1,0 +1,1 @@
+module.exports = `Missing "extractKeysFile" or "extractKeysType" option in config`;

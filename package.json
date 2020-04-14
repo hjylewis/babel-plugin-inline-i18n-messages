@@ -14,14 +14,29 @@
     "url": "https://github.com/hjylewis/babel-plugin-inline-i18n-messages/issues"
   },
   "homepage": "https://github.com/hjylewis/babel-plugin-inline-i18n-messages#readme",
-  "dependencies": {},
+  "peerDependencies": {
+    "@babel/core": "^7.9.0"
+  },
+  "dependencies": {
+    "@babel/helper-module-imports": "^7.8.3",
+    "@formatjs/cli": "^1.5.0",
+    "execa": "^4.0.0"
+  },
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-syntax-jsx": "^7.8.3",
+    "babel-plugin-tester": "^9.0.0",
+    "bufferutil": "^4.0.1",
+    "canvas": "^2.6.1",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.2",
     "husky": "^4.2.3",
+    "intl-messageformat-parser": "^4.1.2",
+    "jest": "^25.3.0",
     "lint-staged": "^10.1.2",
-    "prettier": "^2.0.4"
+    "prettier": "^2.0.4",
+    "utf-8-validate": "^5.0.2"
   },
   "husky": {
     "hooks": {

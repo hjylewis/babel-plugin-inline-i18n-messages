@@ -1,0 +1,1 @@
+module.exports = `Missing "addMessagesSource" option in config`;

@@ -1,0 +1,5 @@
+{
+  "extractKeysType": "formatjs",
+  "getMessageFile": "./getMessage.js",
+  "addMessagesSource": "i18n/addMessages.js"
+}

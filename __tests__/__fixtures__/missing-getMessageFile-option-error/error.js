@@ -1,0 +1,1 @@
+module.exports = `Missing "getMessageFile" option in config`;
