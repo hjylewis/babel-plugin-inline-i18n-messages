@@ -1,6 +1,6 @@
 # babel-plugin-inline-i18n-messages
 
-A tooling-agnostic i18n message inlining plugin for babel. Enables dynamic scalable i18n message bundles capable of being code-split.
+A tooling-agnostic i18n message inlining plugin for babel. Enables dynamic, scalable i18n message bundles capable of being code-split.
 
 ![Before and after diagram. Before: single large message bundle loaded upfront. After: several smaller file-scoped message bundles loaded with each file.](images/inline-i18n-messages-diagram.png)
 
@@ -94,7 +94,7 @@ Add to your .babelrc or babel-loader configuration. For more information about t
 ## API
 
 ### `addMessages`
-A client-side module that exports a named function called `addMessages`. This function should accept an array of id and message arrays and inject them into your i18n tooling. This function will be dependent on your client-side i18n tooling. You'll add the the path to this module as the `addMessagesSource` option in the [plugin configuration](#Options).
+A client-side module that exports a named function called `addMessages`. This function should accept an array of id and message arrays and inject them into your i18n tooling. This function will be dependent on your client-side i18n tooling. You'll add the path to this module as the `addMessagesSource` option in the [plugin configuration](#Options).
 
 Example:
 ```js
@@ -117,7 +117,7 @@ See full examples [here](/examples).
 
 ### `getMessage`
 
-A build-side module that exports a default function called `getMessage`. This function should accept a message key, locale, and default message and return a message. This function will be dependent on your localization flow and where you keep your translated messages. You'll add the the path to this module as the `getMessageFile` option in the [plugin configuration](#Options).
+A build-side module that exports a default function called `getMessage`. This function should accept a message key, locale, and default message and return a message. This function will be dependent on your localization flow and where you keep your translated messages. You'll add the path to this module as the `getMessageFile` option in the [plugin configuration](#Options).
 
 Example:
 ```js
@@ -133,7 +133,7 @@ See full examples [here](/examples).
 
 ### `extractKeys`
 
-A build-side module that exports a default function called `extractKeys`. This function should accept a filename and return an array of message key string or an object containing key strings and default message strings. These keys will be passed to your [getMessage](#getMessage) function. This function will be dependent on your client-side i18n tooling. You'll add the the path to this module as the `extractKeysFile` option in the [plugin configuration](#Options).
+A build-side module that exports a default function called `extractKeys`. This function should accept a filename and return an array of message key string or an object containing key strings and default message strings. These keys will be passed to your [getMessage](#getMessage) function. This function will be dependent on your client-side i18n tooling. You'll add the path to this module as the `extractKeysFile` option in the [plugin configuration](#Options).
 
 Example:
 ```js
@@ -154,7 +154,7 @@ Most internationalization (i18n) libraries require you to statically define your
 You could manually split up your message objects and load them at specific parts of your application but this process is unwieldy. What happens if you delete a page? Create a new page? What if two pages require the same messages? You'd have to manually maintain this relationship in your i18n message bundles. This approach leads to an awkward and brittle maintenance experience.
 
 ### The solution
-What if instead of loading on large object upfront for the entire application, we file-scoped the loading of i18n messages. This would mean each file had it's own i18n message bundle which was loaded only when the file was loaded. Think of this like as similar to a CSS-in-JS solution for i18n messages. We are co-locating your messages in your JS like how CSS-in-JS co-locates your styles in your JS to reduce bloat. By loading only the messages we need, when we need them, we are never loading extraneous messages.
+What if instead of loading one large object upfront for the entire application, we file-scoped the loading of i18n messages. This would mean each file had its own i18n message bundle which was loaded only when the file was loaded. Think of this as similar to a CSS-in-JS solution for i18n messages. We are co-locating your messages in your JS like how CSS-in-JS co-locates your styles in your JS to reduce bloat. By loading only the messages we need, when we need them, we are never loading extraneous messages.
 
 This is exactly what `babel-plugin-inline-i18n-messages` does automatically. When you include this plugin into your babel configuration, it will search for the message keys you use in each file and dynamically load only the messages you need per file. This makes it extremely easy to code-split parts of your application in a way that your i18n messages are also code-split.
 
