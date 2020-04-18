@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@babel/helper-module-imports": "^7.8.3",
-    "@formatjs/cli": "^1.5.0",
+    "@formatjs/cli": "^1.6.5",
     "execa": "^4.0.0"
   },
   "devDependencies": {
