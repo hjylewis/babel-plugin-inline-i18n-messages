@@ -2,7 +2,13 @@
 
 A tooling-agnostic i18n message inlining plugin for babel. Enables dynamic scalable i18n message bundles capable of being code-split.
 
-![Before and after diagram. Before: single large message bundle loaded upfront. After: several smaller file-scoped message bundles loaded with each file.](images/inline-i18n-messages-diagram.png)
+<div align="center">
+  <img
+    height="400"
+    alt="Before and after diagram. Before: single large message bundle loaded upfront. After: several smaller file-scoped message bundles loaded with each file."
+    src="images/inline-i18n-messages-diagram.png"
+  />
+</div>
 
 ## Why
 
