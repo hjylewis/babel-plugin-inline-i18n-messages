@@ -28,6 +28,7 @@
     "babel-plugin-tester": "^9.0.0",
     "bufferutil": "^4.0.1",
     "canvas": "^2.6.1",
+    "doctoc": "^1.4.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.2",
@@ -44,6 +45,7 @@
     }
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix"
+    "*.js": "eslint --cache --fix",
+    "./README.md": "doctoc --notitle"
   }
 }
