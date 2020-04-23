@@ -9,6 +9,19 @@
     "type": "git",
     "url": "git+https://github.com/hjylewis/babel-plugin-inline-i18n-messages.git"
   },
+  "keywords": [
+    "i18n",
+    "internationalization",
+    "localization",
+    "babel",
+    "inline",
+    "react-intl",
+    "formatjs",
+    "messages",
+    "bundle",
+    "split",
+    "code-splitting"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/hjylewis/babel-plugin-inline-i18n-messages/issues"
