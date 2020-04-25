@@ -90,7 +90,26 @@ Add to your .babelrc or babel-loader configuration. For more information about t
   * `extractKeysType`: One of the supported extractKeysTypes: `formatjs`. See [react-intl/formatjs quickstart](#react-intl/formatjs-Quickstart) for more informatiom.
 * `locale`: Locale string that is passed to your [getMessage](#getMessage) function.
 
-## react-intl/formatjs Quickstart
+## react-intl Quickstart
+If you are using formatjs as your i18n tool, there are a couple of features built into this plugin to get you up and running faster.
+
+Follow the [Getting Started guide](#Getting-started) but instead of defining a `extractKeysFile` in your configuration, set `extractKeysType` to `formatjs`. Your babel configuration should look something like this:
+
+```json
+{
+  "plugins": [
+    [
+      "inline-i18n-messages", {
+        "extractKeysType": "formatjs",
+        "addMessagesSource": "path/to/addMessages/module",
+        "getMessageFile": "path/to/getMessage/module",
+        "locale": "en-us"
+      }
+    ]
+  ]
+}
+```
+
 1. install
 1. add addMessages like this
 1. add getMessage like this
@@ -129,7 +148,7 @@ Example:
 ```js
 // i18n/getMessage.js
 module.exports = function getMessage(key, locale, defaultMessage) {
-  const file = fs.readFileSync(`./messages/${local}.json`);
+  const file = fs.readFileSync(`./messages/${locale}.json`);
   const messages = JSON.parse(file);
 
   return messages[key] || defaultMessage
