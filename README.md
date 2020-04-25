@@ -1,5 +1,10 @@
 # babel-plugin-inline-i18n-messages
 
+[![npm](https://img.shields.io/npm/v/babel-plugin-inline-i18n-messages.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-inline-i18n-messages)
+[![Build Status](https://img.shields.io/travis/hjylewis/babel-plugin-inline-i18n-messages/master.svg?style=flat-square)](https://travis-ci.org/hjylewis/babel-plugin-inline-i18n-messages)
+[![codecov](https://img.shields.io/codecov/c/github/hjylewis/babel-plugin-inline-i18n-messages/master?style=flat-square)](https://codecov.io/gh/hjylewis/babel-plugin-inline-i18n-messages)
+[![npm](https://img.shields.io/npm/l/babel-plugin-inline-i18n-messages.svg?style=flat-square)](https://github.com/hjylewis/babel-plugin-inline-i18n-messages/blob/master/LICENSE)
+
 A tooling-agnostic i18n message inlining plugin for babel. Enables dynamic, scalable i18n message bundles capable of being code-split.
 
 <div align="center">
