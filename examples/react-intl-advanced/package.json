@@ -1,5 +1,5 @@
 {
-  "name": "react-intl-example",
+  "name": "react-intl-advanced-example",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
     "babel-loader": "^8.1.0",
     "babel-plugin-inline-i18n-messages": "0.0.1",
     "html-webpack-plugin": "^4.2.0",
+    "intl-messageformat-parser": "^5.0.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
