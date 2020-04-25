@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-inline-i18n-messages",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "src/index.js",
   "scripts": {
     "test": "jest __tests__/index.js"
