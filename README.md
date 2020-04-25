@@ -117,6 +117,8 @@ Instead of defining a `extractKeysFile` in your configuration, set `extractKeysT
 }
 ```
 
+Once you create your [getMessage](/examples/react-intl/i18n/getMessage.js) and [addMessages](/examples/react-intl/src/i18n/messages.js) functions and plug the messages into your `<IntlProvider/>`, you should be ready to go.
+
 See a full react-intl example [here](/examples/react-intl).
 
 For a more advanced example that pre-compiles the message into an AST using [intl-messageformat-parser](https://www.npmjs.com/package/intl-messageformat-parser) see this [example](/examples/react-intl-advanced).
