@@ -1,8 +1,10 @@
-import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import React from "react";
+import { FormattedMessage } from "react-intl";
 
-export default () => (
+const OtherComponent = () => (
   <div>
     <FormattedMessage id="later" />
   </div>
-)
+);
+
+export default OtherComponent;
