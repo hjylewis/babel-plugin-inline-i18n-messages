@@ -9,6 +9,7 @@
     "type": "git",
     "url": "git+https://github.com/hjylewis/babel-plugin-inline-i18n-messages.git"
   },
+  "description": "A tooling-agnostic i18n message inlining plugin for babel",
   "keywords": [
     "i18n",
     "internationalization",
@@ -26,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/hjylewis/babel-plugin-inline-i18n-messages/issues"
   },
-  "homepage": "https://github.com/hjylewis/babel-plugin-inline-i18n-messages#readme",
+  "homepage": "https://github.com/hjylewis/babel-plugin-inline-i18n-messages",
   "peerDependencies": {
     "@babel/core": "^7.9.0"
   },
