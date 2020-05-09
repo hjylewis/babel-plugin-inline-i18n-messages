@@ -1,0 +1,19 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      "inline-i18n-messages",
+      {
+        "locale": "en",
+        "extractKeysType": "formatjs",
+        "getMessageFile": "./i18n/getMessage.js",
+        "addMessagesSource": "i18n/messages"
+      }
+    ],
+    ["module-resolver", {
+      "alias": {
+        "i18n": "./pages/i18n"
+      }
+    }]
+  ]
+}
