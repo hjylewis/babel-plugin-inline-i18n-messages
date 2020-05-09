@@ -93,7 +93,7 @@ Add to your .babelrc or babel-loader configuration. For more information about t
 
 ## Options
 
-- `addMessagesSource` _(required)_: Path to client-side module that exports addMessages function. See [addMessages](#addMessages).
+- `addMessagesSource` _(required)_: Path to client-side module that exports addMessages function. Should be an absolute path to avoid issues with folder structure. See [addMessages](#addMessages).
 - `getMessageFile` _(required)_: Path to build-side module that exports getMessage function. See [getMessage](#getMessage).
 - `extractKeysFile` OR `extractKeysType` _(required)_: Your configuration must include one of the following:
   - `extractKeysFile`: Path to build-side module that exports extractKeys function. See [extractKeys](#extractKeys).
@@ -149,6 +149,8 @@ Furthermore, it does so in a way that is agnostic to what i18n tooling you are u
 ### `addMessages`
 
 A client-side module that exports a named function called `addMessages`. This function should accept an array of id and message arrays and inject them into your i18n tooling. This function will be dependent on your client-side i18n tooling. You'll add the path to this module as the `addMessagesSource` option in the [plugin configuration](#Options).
+
+To avoid issues with nested folder structure, you'll want to use an absolute path to this module. To achieve this you can use [babel-plugin-module-resolver](https://github.com/tleunen/babel-plugin-module-resolver). See full examples [here](/examples).
 
 Example:
 
