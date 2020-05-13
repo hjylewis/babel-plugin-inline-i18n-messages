@@ -1,6 +1,6 @@
 {
   "name": "nextjs-example",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,13 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
+    "babel-loader": "8.1.0",
     "next": "9.3.6",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-intl": "^4.5.3"
+    "react-intl": "4.5.3"
   },
   "devDependencies": {
-    "babel-plugin-inline-i18n-messages": "^0.1.2",
-    "babel-plugin-module-resolver": "^4.0.0"
+    "babel-plugin-inline-i18n-messages": "0.1.2"
   }
 }
