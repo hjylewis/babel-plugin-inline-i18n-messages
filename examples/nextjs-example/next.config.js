@@ -17,7 +17,6 @@ module.exports = {
               [
                 "inline-i18n-messages",
                 {
-                  locale: "en",
                   extractKeysType: "formatjs",
                   getMessageFile: "./i18n/getMessage.js",
                   addMessagesSource: "i18n/addMessages.js",
