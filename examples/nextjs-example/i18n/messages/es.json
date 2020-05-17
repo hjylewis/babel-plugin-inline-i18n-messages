@@ -1,5 +1,8 @@
 {
-  "hello": "hola, mundo",
-  "sup": "sup, mundo",
-  "later": "esto fue cargado más tarde"
+  "hello": "¡Hola mundo!",
+  "about": "Sobre nosotros",
+  "later": "Esto se cargó más tarde",
+  "nav.home": "Inicio",
+  "nav.about": "Acerca de",
+  "lazy": "Paquete dividido de código de carga"
 }

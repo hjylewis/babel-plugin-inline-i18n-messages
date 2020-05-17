@@ -1,5 +1,8 @@
 {
-  "hello": "hello, world",
-  "sup": "sup, world",
-  "later": "this was loaded later"
+  "hello": "Hello, world!",
+  "about": "About us",
+  "later": "This was loaded later",
+  "nav.home": "Home",
+  "nav.about": "About",
+  "lazy": "Load Code split bundle"
 }
