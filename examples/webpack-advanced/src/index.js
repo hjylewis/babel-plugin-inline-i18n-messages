@@ -1,3 +1,4 @@
+// This is necessary for pointing to the localized code-split webpack-chunks
 // eslint-disable-next-line no-undef
 __webpack_public_path__ = `/${window.__intl_locale}/`;
 

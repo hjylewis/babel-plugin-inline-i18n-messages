@@ -5,57 +5,64 @@ const SENTINEL_IDENTIFIER = "] :: TRANSLATION_TIME :: [";
 
 class ReplaceSentinelPlugin {
   apply(compiler) {
-    compiler.hooks.emit.tapPromise("ReplaceSentinelPlugin", (compilation) => {
+    compiler.hooks.emit.tap("ReplaceSentinelPlugin", (compilation) => {
       const assets = compilation.getAssets();
 
-      return Promise.all(
-        assets.map((asset) => {
-          const content = asset.source.source();
+      assets.forEach((asset) => {
+        const content = asset.source.source();
 
-          const sections = content.split(SENTINEL_IDENTIFIER);
-          const keyMatches = [];
+        const sections = content.split(SENTINEL_IDENTIFIER);
+        const sentinelLocations = [];
 
-          let start = 0;
-          sections.forEach((section, i) => {
-            if (i % 2 === 0) {
-              //source code, leave alone;
-              start += section.length;
-              return;
-            } else {
-              // match
+        let indexOfCurrentSection = 0;
+        sections.forEach((section, i) => {
+          if (i % 2 === 0) {
+            // this is source code, leave alone
 
-              const end =
-                start + section.length + SENTINEL_IDENTIFIER.length * 2;
-              keyMatches.push({
-                key: section,
-                start: start - 1,
-                end: end,
-              });
+            const indexOfNextSection = indexOfCurrentSection + section.length;
+            indexOfCurrentSection = indexOfNextSection;
+            return;
+          } else {
+            // this is a sentinel, log the start and end indexes so that we can replace with localized content later
 
-              start = end;
-            }
-          });
+            // "] :: TRANSLATION_TIME :: [key] :: TRANSLATION_TIME :: ["
+            //  ^                                                      ^
+            //  indexOfCurrentSection                                  indexOfNextSection
 
-          ["en", "es"].forEach((locale) => {
-            const newSource = new ReplaceSource(asset.source);
+            const indexOfNextSection =
+              indexOfCurrentSection +
+              section.length +
+              SENTINEL_IDENTIFIER.length * 2;
 
-            newSource.insert(0, `window.__intl_locale="${locale}";`);
-
-            keyMatches.forEach(({ key, start, end }) => {
-              const payload = getMessage(key, locale);
-              newSource.replace(start, end, JSON.stringify(payload));
+            sentinelLocations.push({
+              key: section,
+              start: indexOfCurrentSection - 1, // include beginning quote (")!
+              end: indexOfNextSection, // include the ending quote (")
             });
 
-            compilation.emitAsset(
-              `${locale}/${asset.name}`,
-              newSource,
-              asset.info
-            );
+            indexOfCurrentSection = indexOfNextSection;
+          }
+        });
+
+        ["en", "es"].forEach((locale) => {
+          const newSource = new ReplaceSource(asset.source);
+
+          // Add global variable to pass locale to JS
+          newSource.insert(0, `window.__intl_locale="${locale}";`);
+
+          // Replace sentinels with localized messages
+          sentinelLocations.forEach(({ key, start, end }) => {
+            const payload = getMessage(key, locale);
+            newSource.replace(start, end, JSON.stringify(payload));
           });
 
-          return Promise.resolve();
-        })
-      );
+          compilation.emitAsset(
+            `${locale}/${asset.name}`,
+            newSource,
+            asset.info
+          );
+        });
+      });
     });
   }
 }

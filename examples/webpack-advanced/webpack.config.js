@@ -20,7 +20,12 @@ function createConfig() {
       filename: `[name].js`,
       path: path.resolve(__dirname, "dist"),
     },
-    plugins: [new ReplaceSentinelPlugin()],
+    optimization: {
+      splitChunks: {},
+    },
+
+    // The cool stuff below!!!
+    plugins: [new ReplaceSentinelPlugin()], // plugin that replaces the sentinels and outputs the localized js
     module: {
       rules: [
         {
@@ -34,7 +39,7 @@ function createConfig() {
                   "inline-i18n-messages",
                   {
                     extractKeysType: "formatjs",
-                    getMessageFile: "./i18n/getSentinelMessage.js",
+                    getMessageFile: "./i18n/getSentinelMessage.js", // insert the sentinels
                     addMessagesSource: "i18n/messages",
                   },
                 ],
@@ -43,9 +48,6 @@ function createConfig() {
           },
         },
       ],
-    },
-    optimization: {
-      splitChunks: {},
     },
   };
 }
