@@ -110,7 +110,9 @@ module.exports = function (babel) {
           "body",
           babel.types.expressionStatement(
             babel.types.callExpression(addMessagesIdentifier, [
-              template.expression(JSON.stringify(idAndMessages))(),
+              template.expression(JSON.stringify(idAndMessages), {
+                placeholderPattern: false,
+              })(),
             ])
           )
         );
