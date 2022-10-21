@@ -9,7 +9,7 @@ function createConfig() {
       index: "en.html",
       openPage: "en.html",
     },
-    devtool: "inline-source-map",
+    devtool: "source-map",
     entry: {
       index: "./src/index.js",
     },

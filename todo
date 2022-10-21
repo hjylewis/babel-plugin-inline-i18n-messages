@@ -1,0 +1,20 @@
+Launch
+- [x] import ordering
+  - [x] tests
+- [x] examples
+- [x] readme
+- [x] CI
+- [x] tags
+- [x] Related issues
+  - https://github.com/formatjs/react-intl/issues/720
+  - https://github.com/formatjs/react-intl/issues/455
+  - https://github.com/formatjs/react-intl/issues/76
+
+Enhancements
+- [ ] semver
+- [ ] rounding up all the messages into one JSON
+- [ ] figure out renaming empty ids
+- [x] webpack example
+- [ ] sync extraction for react-intl?
+- [ ] https://www.npmjs.com/package/schema-utils
+

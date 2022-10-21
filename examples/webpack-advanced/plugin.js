@@ -47,8 +47,10 @@ class ReplaceSentinelPlugin {
         ["en", "es"].forEach((locale) => {
           const newSource = new ReplaceSource(asset.source);
 
-          // Add global variable to pass locale to JS
-          newSource.insert(0, `window.__intl_locale="${locale}";`);
+          if (/\.(j|t)s$/.test(asset.name)) {
+            // Add global variable to pass locale to JS
+            newSource.insert(0, `window.__intl_locale="${locale}";\n`);
+          }
 
           // Replace sentinels with localized messages
           sentinelLocations.forEach(({ key, start, end }) => {
@@ -56,11 +58,7 @@ class ReplaceSentinelPlugin {
             newSource.replace(start, end, JSON.stringify(payload));
           });
 
-          compilation.emitAsset(
-            `${locale}/${asset.name}`,
-            newSource,
-            asset.info
-          );
+          compilation.emitAsset(`${locale}/${asset.name}`, newSource);
         });
       });
     });
